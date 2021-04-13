@@ -1,23 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import Item from "./components/Item";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import Filter from "./components/Filter";
 
 function App() {
+  const [items, setItems] = useState([]);
+  useEffect(() => {
+    //fetch products
+    axios
+      .get("https://storage.googleapis.com/wineshop-assets/wine-shop.json")
+      .then((res) => {
+        console.log("🚀 ~ file: App.js ~ line 10 ~ axios.get ~ res", res);
+        if (res.status == 200) {
+          setItems(res.data);
+        }
+      });
+  }, []);
+  function renderItems() {
+    return items.map((item) => {
+      return (
+        <Item
+          key={item.no}
+          case_cost={item.cost.case}
+          bottle_cost={item.cost.bottle}
+          name={item.name}
+        />
+      );
+    });
+  }
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1 className="title">Wine Shop</h1>
+        <span className="link_text">wineshop.com</span>
       </header>
+      <div>
+        <Filter/>
+      </div>
+
+      <div className="items_grid">{renderItems()}</div>
     </div>
   );
 }
