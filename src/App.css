@@ -86,7 +86,7 @@
   border-width: 1px;
 }
 
-.details_btn{
+.light_btn{
   background-color: #D8D8D8;
   outline: none;
   margin-top: 15px;
@@ -94,7 +94,7 @@
   border: none;
   height: 23px;
 }
-.add_to_cart_btn{
+.dark_btn{
   background-color: #4D4D4D;
   outline: none;
   margin-top: 15px;
@@ -109,12 +109,15 @@
   bottom: 0;
 }
 .filter{
-  width:300px;
+ padding:10px;
+  background-color: #F7F7F7;
+  margin-left: 90px;
 }
 .filter_btn{
   border:none;
   outline: none;
   padding:3px;
+  padding:5px;
 }
 
 .clear_btn{
@@ -129,6 +132,70 @@
   flex-direction: row;
   justify-items:center;
   align-items: center;
-  width: 100%;
 
+}
+.huge_margin_left{
+  margin-left: 95px;
+}
+.sparkling_margin{
+ margin-left: 40px;
+}
+.red_margin{
+  margin-left: 40px;
+}
+
+.top_section{
+  display: flex;
+  flex-direction: row;
+  margin-top: 25px;
+
+}
+.cart_quantity{
+  width:50px;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  margin-left: 40px;
+}
+.cart_items{
+  display: flex;
+  flex-direction: column;
+  margin-left: 80px;
+}
+.price_text{
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 20px;
+}
+
+.cart{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right:0;
+  margin-right: 130px;
+  background-color: #F7F7F7;
+  padding:10px
+  
+}
+
+.cart_btns{
+  display: flex;
+  flex-direction: column;
+  margin-left: 40px;
+}
+
+.delivery_info{
+  font-size: 15px;
+}
+.price_filter{
+  margin-left: 20px;
+}
+.vintage_margin{
+  margin-left: 45px;
+}
+.filter_row{
+  margin-top: 8px;
 }

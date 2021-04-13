@@ -1,9 +1,9 @@
-import logo from "./logo.svg";
 import "./App.css";
 import Item from "./components/Item";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Filter from "./components/Filter";
+import Cart from "./components/Cart"
 
 function App() {
   const [items, setItems] = useState([]);
@@ -13,7 +13,7 @@ function App() {
       .get("https://storage.googleapis.com/wineshop-assets/wine-shop.json")
       .then((res) => {
         console.log("🚀 ~ file: App.js ~ line 10 ~ axios.get ~ res", res);
-        if (res.status == 200) {
+        if (res.status === 200) {
           setItems(res.data);
         }
       });
@@ -36,9 +36,10 @@ function App() {
         <h1 className="title">Wine Shop</h1>
         <span className="link_text">wineshop.com</span>
       </header>
-      <div>
+      <section className="top_section">
         <Filter/>
-      </div>
+        <Cart/>
+      </section>
 
       <div className="items_grid">{renderItems()}</div>
     </div>

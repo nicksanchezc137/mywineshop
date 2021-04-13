@@ -14,10 +14,10 @@ function Item(props) {
               <span className="price_text">{props.bottle_cost}</span>
             </div>
             <div className="input_container">
-              <input type="number" className="qty_input" min="0" max="100"/>
-              <label class="qty_label">QTY</label>
+              <input type="number" className="qty_input" min="1" max="100"/>
+              <label className="qty_label">QTY</label>
             </div>
-            <button className="details_btn">Details</button>
+            <button className="light_btn">Details</button>
           </div>
 
           <div className="right_single_item">
@@ -26,10 +26,10 @@ function Item(props) {
               <span className="price_text">{props.case_cost}</span>
             </div>
             <div className="input_container">
-              <input type="number" className="qty_input" min="0" max="100"/>
-              <label class="qty_label">QTY</label>
+              <input type="number" className="qty_input" min="1" max="100"/>
+              <label className="qty_label">QTY</label>
             </div>
-            <button className="add_to_cart_btn">Add to Cart</button>
+            <button className="dark_btn">Add to Cart</button>
           </div>
         </div>
       </div>
